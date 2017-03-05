@@ -1,0 +1,11 @@
+{
+	"uuid": "632FC76C-AFAC-4D7A-80D8-23683EA04D0A",
+	"category": "latex",
+	"templates": [
+		{
+			"name": "LaTeX Template",
+			"fileExtension": "tex",
+			"snippet": "\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\usepackage{amsmath,amssymb,amsthm}\n\n\n\\begin{document}\n$0\n\\end{document}"
+		}
+	]
+}
