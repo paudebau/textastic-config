@@ -53,7 +53,7 @@
 		  {"string": "env", "replace":"\\begin{${1:env}}\n\t$0\n\\end{${1:env}}"},
 		  {"string": "item", "replace":"\\begin{itemize}\n\t\\item $0\n\\end{itemize}"},
 		  {"string": "tikz", "replace":"\\begin{tikzpicture}\n\t$0\n\\end{tikzpicture}"},
-		  {"string": "ece", "replace":"\\begin{center}\n\t$0\n\\end{center}"},
+		  {"string": "cen", "replace":"\\begin{center}\n\t$0\n\\end{center}"},
 		  ]
   },
   {
