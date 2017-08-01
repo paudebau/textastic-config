@@ -1,0 +1,290 @@
+completionSets:
+- defaultAppend: ''
+  name: c.keywords.control
+  strings:
+  - return
+  - append: ;
+    string: break
+  - append: ' ${1:condition}: '
+    string: case
+  - append: ;
+    string: continue
+  - append: ':'
+    string: default
+  - append: " {\n\t$0\n} while ($1);"
+    string: do
+  - append: " {\n\t$0\n}"
+    string: else
+  - append: " (${1:i = 0}; i ${3:< count}; ${4:i++}) {\n\t$0\n}"
+    string: for
+  - append: ' ${1:label};'
+    string: goto
+  - append: " ($1) {\n\t$0\n}"
+    string: if
+  - append: " ($1) {\n\t$0\n}"
+    string: switch
+  - append: " ($1) {\n\t$2\n}"
+    string: while
+- defaultAppend: ''
+  name: c.keywords.control.else-if
+  strings:
+  - append: " ($1) {\n\t$0\n}"
+    string: else if
+- defaultAppend: ''
+  name: c.keywords.structures
+  strings:
+  - struct
+  - union
+  - enum
+  - replace: "enum ${1:name} {\n\t${2:enumerator1} = ${3:value1}\n\t${4:enumerator2}\
+      \ = ${5:value2}\n};"
+    string: enumdef
+  - replace: "struct ${1:name} {\n\t${2:members}\n};"
+    string: structdef
+  - append: ' ${1:existing} ${2:new};'
+    string: typedef
+  - replace: "union ${1:name} {\n\t${2:members}\n};"
+    string: uniondef
+- defaultAppend: ''
+  name: c.keywords.operators
+  strings:
+  - append: (${1:type})$0
+    string: sizeof
+- defaultAppend: ''
+  name: c.keywords.dataTypes
+  strings:
+  - void
+  - char
+  - double
+  - float
+  - int
+  - long
+  - short
+  - signed
+  - unsigned
+- defaultAppend: ''
+  name: c.keywords.storageClasses
+  strings:
+  - auto
+  - extern
+  - register
+  - static
+- defaultAppend: ''
+  name: c.keywords.typeQualifiers
+  strings:
+  - const
+  - volatile
+- defaultAppend: ''
+  name: c.constants
+  strings:
+  - 'true'
+  - 'false'
+  - 'NULL'
+- defaultAppend: ($1)
+  name: c.functions
+  strings:
+  - append: (${1:pointer})
+    string: free
+  - append: (${1:size})
+    string: malloc
+  - abort
+  - abs
+  - acos
+  - asctime
+  - asin
+  - assert
+  - atan
+  - atan2
+  - atexit
+  - atof
+  - atoi
+  - atol
+  - bsearch
+  - calloc
+  - ceil
+  - clearerr
+  - clock
+  - cos
+  - cosh
+  - ctime
+  - difftime
+  - div
+  - ecvt
+  - exit
+  - exp
+  - fabs
+  - fclose
+  - fcvt
+  - feof
+  - ferror
+  - fflush
+  - fgetc
+  - fgetpos
+  - fgets
+  - floor
+  - fmod
+  - fopen
+  - fprintf
+  - fputc
+  - fputchar
+  - fputs
+  - fread
+  - free
+  - freopen
+  - frexp
+  - fscanf
+  - fseek
+  - fsetpos
+  - ftell
+  - fwrite
+  - gcvt
+  - getc
+  - getchar
+  - getenv
+  - gets
+  - getw
+  - gmtime
+  - isalnum
+  - isalpha
+  - iscntrl
+  - isdigit
+  - isgraph
+  - islower
+  - isprint
+  - ispunct
+  - isspace
+  - isupper
+  - isxdigit
+  - itoa
+  - labs
+  - ldexp
+  - ldiv
+  - lfind
+  - localtime
+  - log
+  - log10
+  - lsearch
+  - ltoa
+  - malloc
+  - max
+  - memchr
+  - memcmp
+  - memcpy
+  - memmove
+  - memset
+  - min
+  - mktime
+  - modf
+  - offsetof
+  - perror
+  - pow
+  - printf
+  - putc
+  - putchar
+  - putenv
+  - puts
+  - putw
+  - qsort
+  - raise
+  - rand
+  - realloc
+  - remove
+  - rename
+  - rewind
+  - scanf
+  - setbuf
+  - setvbuf
+  - signal
+  - sin
+  - sinh
+  - sprintf
+  - sqrt
+  - srand
+  - sscanf
+  - strcat
+  - strchr
+  - strcmp
+  - strcoll
+  - strcpy
+  - strcspn
+  - strerror
+  - strftime
+  - strlen
+  - strncat
+  - strncmp
+  - strncpy
+  - strpbrk
+  - strrchr
+  - strspn
+  - strstr
+  - strtod
+  - strtok
+  - strtol
+  - strtoul
+  - strxfrm
+  - swab
+  - system
+  - tan
+  - tanh
+  - time
+  - tmpfile
+  - tmpnam
+  - tolower
+  - toupper
+  - ultoa
+  - ungetc
+  - va_arg
+  - va_end
+  - va_start
+  - vfprintf
+  - vprintf
+  - vsprintf
+- name: c.preprocessor.directives
+  strings:
+  - append: ${1:filename}>
+    string: include <
+  - append: ${1:filename}"
+    string: include "
+  - if
+  - ifdef
+  - ifndef
+  - elif
+  - else
+  - define
+  - undef
+  - pragma
+  - error
+  - warning
+contexts:
+- completionCaptureIndex: 1
+  completionSetNames:
+  - c.keywords.control
+  description: Control keywords
+  pattern: (?<!\.|\[|\(|,|@)\b([a-zA-Z]*)
+  scope: (source.c | source.c++ | source.objc | source.objc++) - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - c.keywords.control.else-if
+  description: else if keyword
+  pattern: (?<!\.|\[|\(|,|@)\b(e[lse if]*)
+  scope: (source.c | source.c++ | source.objc | source.objc++) - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - c.preprocessor.directives
+  description: Preprocessor directives
+  pattern: \s*#([a-zA-Z]*)
+  scope: (source.c | source.c++ | source.objc | source.objc++) - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - c.keywords.structures
+  - c.keywords.operators
+  - c.keywords.dataTypes
+  - c.keywords.storageClasses
+  - c.keywords.typeQualifiers
+  - c.functions
+  - c.constants
+  description: Non-control keywords
+  pattern: (?<!\.|@)\b([a-zA-Z]*)
+  scope: (source.c | source.c++ | source.objc | source.objc++) - comment - string
+description: Textastic Code Completion for C
+uuid: 5172F0C4-E2A6-4EC4-ADFA-B946A09FC070

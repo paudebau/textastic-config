@@ -1,0 +1,757 @@
+completionSets:
+- defaultAppend: ''
+  name: js.keywords.control
+  strings:
+  - append: ;
+    string: continue
+  - append: " (${1:${2:var i = 0}; ${3:i < count}; ${4:i++}}) {\n\t$0\n}"
+    string: for
+  - replace: "for (${1:variable} in ${2:object}) {\n\t$0\n}"
+    string: forin
+  - append: " ($1) {\n\t$0\n}"
+    string: if
+  - append: " {\n\t$0\n}"
+    string: else
+  - append: " ($1) {\n\t$0\n}"
+    string: switch
+  - append: ' ${1:condition}: '
+    string: case
+  - append: ;
+    string: break
+  - append: ':'
+    string: default
+  - append: " {\n\t$0\n}"
+    string: try
+  - append: " (${1:error}) {\n\t$0\n}"
+    string: catch
+  - append: " {\n\t$0\n}"
+    string: finally
+  - throw
+  - append: " {\n\t$0\n} while ($1);"
+    string: do
+  - append: " (${1:?}){\n\t$2\n}"
+    string: while
+  - append: " ($1)  {\n\t$0\n}"
+    string: with
+  - in
+  - return
+  - void
+- name: js.keywords.control.else-if
+  strings:
+  - append: " ($1) {\n\t$0\n}"
+    string: else if
+- defaultAppend: ''
+  name: js.keywords
+  strings:
+  - append: " ${1:name}($2) {\n\t$0\n}"
+    string: function
+  - new
+  - delete
+  - super
+  - this
+  - var
+  - instanceof
+  - typeof
+  - Infinity
+  - undefined
+  - NaN
+  - 'true'
+  - 'false'
+  - 'null'
+- defaultAppend: ($1)
+  name: js.native-objects
+  strings:
+  - Array
+  - Boolean
+  - Date
+  - Error
+  - Function
+  - Number
+  - Object
+  - RegExp
+  - String
+  - Image
+  - Node
+- name: js.native-objects.static
+  strings:
+  - Date
+  - Math
+  - Number
+  - String
+  - Node
+- name: js.native-objects.Date
+  strings:
+  - append: (${1:yyyy}, ${2:mm}, ${3:dd}${4:, ${5:hh}, ${6:mm}, ${7:ss}, ${8:ms}})
+    string: UTC
+- name: js.native-objects.Math
+  strings:
+  - E
+  - LN2
+  - LN10
+  - LOG2E
+  - LOG10E
+  - PI
+  - SQRT1_2
+  - SQRT2
+  - append: (${1:number})
+    string: abs
+  - append: (${1:number})
+    string: acos
+  - append: (${1:number})
+    string: asin
+  - append: (${1:number})
+    string: atan
+  - append: (${1:x}, ${2:y})
+    string: atan2
+  - append: (${1:number})
+    string: ceil
+  - append: (${1:number})
+    string: cos
+  - append: (${1:number})
+    string: exp
+  - append: (${1:number})
+    string: floor
+  - append: (${1:number})
+    string: log
+  - append: (${1:number1}, ${2:number2})
+    string: max
+  - append: (${1:number1}, ${2:number2})
+    string: min
+  - append: (${1:number1}, ${2:number2})
+    string: pow
+  - append: ()
+    string: random
+  - append: (${1:number})
+    string: round
+  - append: (${1:number})
+    string: sin
+  - append: (${1:number})
+    string: sqrt
+  - append: (${1:number})
+    string: tan
+- name: js.native-objects.Number
+  strings:
+  - MAX_VALUE
+  - MIN_VALUE
+  - NEGATIVE_INFINITY
+  - POSITIVE_INFINITY
+- name: js.native-objects.String
+  strings:
+  - append: (${1:num1}${2:, ${3:num2 ...}})
+    string: fromCharCode
+- name: js.native-objects.Node
+  strings:
+  - ATTRIBUTE_NODE
+  - CDATA_SECTION_NODE
+  - COMMENT_NODE
+  - DOCUMENT_FRAGMENT_NODE
+  - DOCUMENT_NODE
+  - DOCUMENT_TYPE_NODE
+  - ELEMENT_NODE
+  - ENTITY_NODE
+  - ENTITY_REFERENCE_NODE
+  - NOTATION_NODE
+  - PROCESSING_INSTRUCTION_NODE
+  - TEXT_NODE
+- defaultAppend: (${1:string})
+  name: js.functions
+  strings:
+  - append: (${1:encodedURI})
+    string: decodeURI
+  - append: (${1:encodedURIComponent})
+    string: decodeURIComponent
+  - encodeURI
+  - encodeURIComponent
+  - escape
+  - eval
+  - append: (${1:expression})
+    string: isFinite
+  - append: (${1:expression})
+    string: isNaN
+  - append: (${1:string}${2:, ${3:base}})
+    string: parseInt
+  - parseFloat
+  - unescape
+- name: js.properties
+  strings:
+  - constructor
+  - length
+  - message
+  - name
+  - caller
+  - global
+  - ignoreCase
+  - lastIndex
+  - multiline
+  - source
+- defaultAppend: ()
+  name: js.methods
+  strings:
+  - toLocaleString
+  - toString
+  - valueOf
+  - append: (${1:array1}${2:, ${3:array2, ...}})
+    string: concat
+  - append: (${1:delimiter})
+    string: join
+  - pop
+  - append: (${1:item1}${2:, ${3:item2, ...}})
+    string: push
+  - reverse
+  - shift
+  - append: (${1:startIndex}${2:, ${3:endIndex}})
+    string: slice
+  - append: (${1:function(a, b) {$2\}})
+    string: sort
+  - append: (${1:startIndex}, ${2:deleteCount}${3:, ${4:replacingItem1, ...}})
+    string: splice
+  - append: (${1:item1}${2:, ${3:item2, ...}})
+    string: unshift
+  - getDate
+  - getDay
+  - getFullYear
+  - getHours
+  - getMilliseconds
+  - getMinutes
+  - getMonth
+  - getSeconds
+  - getTime
+  - getTimezoneOffset
+  - getUTCDate
+  - getUTCDay
+  - getUTCFullYear
+  - getUTCHours
+  - getUTCMilliseconds
+  - getUTCMinutes
+  - getUTCMonth
+  - getUTCSeconds
+  - getYear
+  - append: (${1:dateString})
+    string: parse
+  - append: (${1:dateInteger})
+    string: setDate
+  - append: (${1:yearInteger})
+    string: setFullYear
+  - append: (${1:hoursInteger})
+    string: setHours
+  - append: (${1:msInteger})
+    string: setMilliseconds
+  - append: (${1:minutesInteger})
+    string: setMinutes
+  - append: (${1:monthInteger})
+    string: setMonth
+  - append: (${1:secondsInteger})
+    string: setSeconds
+  - append: (${1:msInteger})
+    string: setTime
+  - append: (${1:dateInteger})
+    string: setUTCDate
+  - append: (${1:yearInteger})
+    string: setUTCFullYear
+  - append: (${1:hoursInteger})
+    string: setUTCHours
+  - append: (${1:msInteger})
+    string: setUTCMilliseconds
+  - append: (${1:minutesInteger})
+    string: setUTCMinutes
+  - append: (${1:monthInteger})
+    string: setUTCMonth
+  - append: (${1:secondsInteger})
+    string: setUTCSeconds
+  - append: (${1:yearInteger})
+    string: setYear
+  - toDateString
+  - toGMTString
+  - toLocaleDateString
+  - toLocaleTimeString
+  - toTimeString
+  - toUTCString
+  - append: (${1:${2:thisOjbect}, ${3:argumentsArray}})
+    string: apply
+  - append: (${1:${2:thisObject}${3:, ${4:arg1, ...}}})
+    string: call
+  - append: (${1:fractionDigits})
+    string: toExponential
+  - append: (${1:fractionDigits})
+    string: toFixed
+  - append: (${1:precisionDigits})
+    string: toPrecision
+  - append: (${1:propertyName})
+    string: hasOwnProperty
+  - append: (${1:objectReference})
+    string: isPrototypeOf
+  - append: (${1:string})
+    string: exec
+  - append: (${1:string})
+    string: test
+  - append: (${1:positionIndex})
+    string: charAt
+  - append: (${1:positionIndex})
+    string: charCodeAt
+  - append: (${1:string2})
+    string: concat
+  - append: (${1:search}${2:, ${3:fromIndex}})
+    string: indexOf
+  - append: (${1:search}${2:, ${3:fromIndex}})
+    string: lastIndexOf
+  - append: (${1:string2})
+    string: localeCompare
+  - append: (${1:regex})
+    string: match
+  - append: (${1:regex}, ${2:replacement})
+    string: replace
+  - append: (${1:regex})
+    string: search
+  - append: (${1:startPositionIndex}, ${2:endPositionIndex})
+    string: slice
+  - append: (${1:delimiter}${2:, ${3:limitInteger}})
+    string: split
+  - append: (${1:startPositionIndex}${2:, ${3:length}})
+    string: substr
+  - append: (${1:startPositionIndex}, ${2:endPositionIndex})
+    string: substring
+  - toLocaleLowerCase
+  - toLocaleUpperCase
+  - toLowerCase
+  - toUpperCase
+- name: js.dom.variables
+  strings:
+  - document
+  - history
+  - localStorage
+  - location
+  - screen
+  - window
+  - self
+  - top
+  - parent
+- name: js.dom.properties
+  strings:
+  - accessKey
+  - attributes
+  - childNodes
+  - className
+  - clientHeight
+  - clientWidth
+  - contentEditable
+  - dir
+  - disabled
+  - firstChild
+  - lastChild
+  - id
+  - innerHTML
+  - innerText
+  - lang
+  - nextSibling
+  - previousSibling
+  - nodeName
+  - nodeType
+  - nodeValue
+  - offsetHeight
+  - offsetWidth
+  - offsetLeft
+  - offsetTop
+  - offsetParent
+  - ownerDocument
+  - parentNode
+  - scrollHeight
+  - scrollWidth
+  - scrollLeft
+  - scrollTop
+  - style
+  - tabIndex
+  - tagName
+  - textContent
+  - title
+- defaultAppend: ()
+  name: js.dom.methods
+  strings:
+  - append: (${1:eventType}, ${2:listener}, ${4:useCapture})
+    string: addEventListener
+  - append: (${1:nodeObject})
+    string: appendChild
+  - blur
+  - click
+  - append: (${1:deepCopyBoolean})
+    string: cloneNode
+  - append: (${1:eventObjectReference})
+    string: dispatchEvent
+  - focus
+  - append: (${1:attributeName})
+    string: getAttribute
+  - append: (${1:attributeName})
+    string: getAttributeNode
+  - append: (${1:namespaceURI}, ${2:localName})
+    string: getAttributeNodeNS
+  - append: (${1:namespaceURI}, ${2:localName})
+    string: getAttributeNS
+  - append: (${1:tagName})
+    string: getElementsByTagName
+  - append: (${1:namespaceURI}, ${2:localName})
+    string: getElementsByTagNameNS
+  - append: (${1:attributeName})
+    string: hasAttribute
+  - append: (${1:namespaceURI}, ${2:localName})
+    string: hasAttributeNS
+  - hasChildNodes
+  - append: (${1:newChildNode}, ${2:referenceChildNodeOrNull})
+    string: insertBefore
+  - append: (${1:feature}, ${2:version})
+    string: isSupported
+  - append: (${1:prefix})
+    string: lookupNamespaceURI
+  - append: (${1:namespaceURI})
+    string: lookupPrefix
+  - normalize
+  - append: (${1:attributeName})
+    string: removeAttribute
+  - append: (${1:attributeNodeReference})
+    string: removeAttributeNode
+  - append: (${1:namespaceURI}, ${2:localName})
+    string: removeAttributeNS
+  - append: (${1:childNodeReference})
+    string: removeChild
+  - append: (${1:eventType}, ${2:listener}, ${4:useCapture})
+    string: removeEventListener
+  - append: (${1:newChildNodeReference}, ${2:oldChildNodeReference})
+    string: replaceChild
+  - append: (${1:attributeName}, ${2:value})
+    string: setAttribute
+  - append: (${1:attributeObjectReference})
+    string: setAttributeNode
+  - append: (${1:attributeObjectReference})
+    string: setAttributeNodeNS
+  - append: (${1:namespaceURI}, ${2:qualifiedName}, ${3:value})
+    string: setAttributeNS
+  - toString
+- name: js.dom.events
+  strings:
+  - abort
+  - blur
+  - change
+  - click
+  - error
+  - focus
+  - load
+  - mousedown
+  - mousemove
+  - mouseout
+  - mouseover
+  - mouseup
+  - reset
+  - resize
+  - scroll
+  - select
+  - submit
+  - storage
+  - unload
+- name: js.dom.document.properties
+  strings:
+  - anchors
+  - applets
+  - body
+  - cookie
+  - defaultView
+  - designMode
+  - documentElement
+  - documentURI
+  - doctype
+  - domain
+  - embeds
+  - forms
+  - frames
+  - images
+  - implementation
+  - lastModified
+  - links
+  - referrer
+  - styleSheets
+  - title
+  - URL
+- defaultAppend: ()
+  name: js.dom.document.methods
+  strings:
+  - clear
+  - close
+  - append: (${1:attributeName})
+    string: createAttribute
+  - append: (${1:namespaceURI}, ${2:qualifiedName})
+    string: createAttributeNS
+  - append: (${1:data})
+    string: createCDATASection
+  - append: (${1:commentText})
+    string: createComment
+  - createDocumentFragment
+  - append: (${1:tagName})
+    string: createElement
+  - append: (${1:namespaceURI}, ${2:qualifiedName})
+    string: createElementNS
+  - append: (${1:entityName})
+    string: createEntityReference
+  - append: (${1:eventType})
+    string: createEvent
+  - append: (${1:target}, ${2:data})
+    string: createProcessingInstruction
+  - createRange
+  - append: (${1:text})
+    string: createTextNode
+  - append: (${1:rootNode}, ${2:whatToShow}, ${3:filterFunction}, ${4:entityRefExpansion})
+    string: createTreeWalker
+  - append: (${1:x}, ${2:y})
+    string: elementFromPoint
+  - append: (${1:commandName}${2:, ${3:displayUI}, ${4:value}})
+    string: execCommand
+  - append: (${1:id})
+    string: getElementById
+  - append: (${1:elementName})
+    string: getElementsByName
+  - append: (${1:nodeReference}, ${2:deepBoolean})
+    string: importNode
+  - append: (${1:${2:MIMEType}, ${3:replace}})
+    string: open
+  - append: (${1:string1}${2:, ${3:string2, ...}})
+    string: write
+  - append: (${1:string1}${2:, ${3:string2, ...}})
+    string: writeln
+- name: js.dom.history.properties
+  strings:
+  - length
+- defaultAppend: ()
+  name: js.dom.history.methods
+  strings:
+  - back
+  - forward
+  - append: (${1:stepCountOrURL})
+    string: go
+- name: js.dom.location.properties
+  strings:
+  - hash
+  - host
+  - hostname
+  - href
+  - pathname
+  - port
+  - protocol
+  - search
+- name: js.dom.location.methods
+  strings:
+  - append: (${1:byPassCache})
+    string: reload
+  - append: (${1:URL})
+    string: replace
+- name: js.dom.screen.properties
+  strings:
+  - availHeight
+  - availWidth
+  - availLeft
+  - availTop
+  - colorDepth
+  - height
+  - width
+  - pixelDepth
+- name: js.dom.window.properties
+  strings:
+  - closed
+  - defaultStatus
+  - document
+  - frameElement
+  - frames
+  - history
+  - innerHeight
+  - innerWidth
+  - length
+  - location
+  - localStorage
+  - name
+  - navigator
+  - opener
+  - outerHeight
+  - outerWidth
+  - pageXOffset
+  - pageYOffset
+  - parent
+  - screen
+  - screenLeft
+  - screenTop
+  - screenX
+  - screenY
+  - scrollX
+  - scrollY
+  - status
+- name: js.dom.window.methods.global
+  strings:
+  - append: (${1:message})
+    string: alert
+  - append: (${1:intervalID})
+    string: clearInterval
+  - append: (${1:timeoutID})
+    string: clearTimeout
+  - append: (${1:message})
+    string: confirm
+  - append: (${1:message}, ${2:defaultReply})
+    string: prompt
+  - append: (${1:functionReference}, ${2:milliseconds})
+    string: setInterval
+  - append: (${1:functionReference}, ${2:milliseconds})
+    string: setTimeout
+- defaultAppend: ()
+  name: js.dom.window.methods
+  strings:
+  - close
+  - getSelection
+  - append: (${1:deltaX}, ${2:deltaY})
+    string: moveBy
+  - append: (${1:x}, ${2:y})
+    string: moveTo
+  - append: (${1:URL}, ${2:windowName}${3:, ${4:windowFeatures}})
+    string: open
+  - print
+  - append: (${1:deltaX}, ${2:deltaY})
+    string: resizeBy
+  - append: (${1:x}, ${2:y})
+    string: resizeTo
+  - append: (${1:x}, ${2:y})
+    string: scroll
+  - append: (${1:deltaX}, ${2:deltaY})
+    string: scrollBy
+  - append: (${1:x}, ${2:y})
+    string: scrollTo
+- name: js.dom.localStorage.methods
+  strings:
+  - append: (${1:index})
+    string: key
+  - append: (${1:key})
+    string: getItem
+  - append: (${1:key}, ${2:value})
+    string: setItem
+  - append: (${1:key})
+    string: removeItem
+  - append: ()
+    string: clear
+contexts:
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.keywords.control
+  description: Control keywords
+  pattern: (?<!\.|\[|\(|,)\b([a-zA-Z]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.keywords.control.else-if
+  description: else if keyword
+  pattern: (?<!\.|\[|\(|,)\b(e[lse if]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.keywords
+  description: Non-control keywords
+  pattern: (?<!\.)\b([a-zA-Z]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.functions
+  - js.dom.variables
+  - js.dom.window.methods.global
+  description: Variables and functions
+  pattern: (?<!\.)\b([a-zA-Z]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.properties
+  - js.methods
+  - js.dom.properties
+  - js.dom.methods
+  description: Properties and methods
+  pattern: \.([a-zA-Z][a-zA-Z ]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects
+  description: Native objects
+  pattern: \bnew\s+([a-zA-Z]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects.static
+  description: Native objects, without "new"
+  pattern: (?<!new )\b([A-Z][a-zA-Z]*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects.Date
+  description: Native objects, Date
+  pattern: \bDate\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects.Math
+  description: Native objects, Math
+  pattern: \bMath\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects.Number
+  description: Native objects, Number
+  pattern: \bNumber\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects.String
+  description: Native objects, String
+  pattern: \bString\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.native-objects.Node
+  description: Native objects, Node
+  pattern: \bNode\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.dom.events
+  description: DOM events
+  pattern: \b(?:addEventListener|removeEventListener)\s*\(\s*['"]([a-zA-Z]*)
+  scope: source.js string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.dom.document.properties
+  - js.dom.document.methods
+  description: document
+  pattern: \bdocument\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.dom.history.properties
+  - js.dom.history.methods
+  description: history
+  pattern: \bhistory\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.dom.location.properties
+  - js.dom.location.methods
+  description: location
+  pattern: \blocation\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.dom.screen.properties
+  description: screen
+  pattern: \bscreen\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 1
+  completionSetNames:
+  - js.dom.localStorage.methods
+  description: localStorage
+  pattern: \blocalStorage\.(\w*)
+  scope: source.js - comment - string
+- completionCaptureIndex: 2
+  completionSetNames:
+  - js.dom.window.properties
+  - js.dom.window.methods
+  - js.dom.window.methods.global
+  description: window
+  pattern: \b(window|opener|parent|self|top)\.(\w*)
+  scope: source.js - comment - string
+description: Textastic Code Completion for JavaScript
+uuid: DE267669-E66E-400A-ACEA-BD906DC2B812

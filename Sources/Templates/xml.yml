@@ -1,0 +1,8 @@
+category: XML
+templates:
+- fileExtension: xml
+  name: XML
+  snippet: '<?xml version="1.0" encoding="UTF-8"?>
+
+    $0'
+uuid: 08163C89-323B-45EF-BC9D-BFCD1052B9E0
