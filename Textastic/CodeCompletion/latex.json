@@ -3,90 +3,93 @@
   "uuid": "E5F7F407-8CE9-43F0-A0F1-BE6288427EC8",
   "category": "LaTeX",
   "completionSets": [
-  {
-	  "name": "LaTeX.keywords.control",
-	  "strings": [
-		  {"string": "d", "replace":"\\$${1:content}\\$ $0"},
-		  {"string": "c", "replace":"\\[${1:content}\\]$0"},
-		  {"string": "mm", "replace":"\\mult $0"},
-		  {"string": "dd", "replace":"\\div $0"},
-		  {"string": "ii", "replace":"\n\\item $0"},
-		  {"string": "nl", "replace":"\n\\\\ $0"},
-		  {"string": "fr", "replace":"\\dfrac{${1:num}}{${2:denom}} $0"},
-		  {"string": "mm", "replace":"\\mult $0"},
-		  {"string": "leq", "replace":"\\leqsant $0"},
-		  {"string": "geq", "replace":"\\geqsant $0"},
-		  {"string": "mapsto", "replace":"\\longmapsto $0"},
-		  {"string": "deg", "replace":"\\degres $0"},
-		  {"string": "w", "replace":"\\widehat{$1} $0"},
-		  {"string": "v", "replace":"\\overrightarrow{$1} $0"},
-		  {"string": "brace", "replace":"\\underset{${1:below}}{\\underbrace{$0}}"},
-		  ]
-  },
-  {
-	  "name": "greek.keywords.control",
-	  "strings": [
-		  {"string": "a", "replace":"\\alpha "},
-		  {"string": "b", "replace":"\\beta "},
-		  {"string": "p", "replace":"\\pi "},
-		  {"string": "g", "replace":"\\gamma "},
-		  {"string": "e", "replace":"\\varepsilon "},
-		  {"string": "z", "replace":"\\zeta "},
-		  {"string": "n", "replace":"\\eta "},
-		  {"string": "o", "replace":"\\omaga "},
-		  {"string": "f", "replace":"\\varphi "},
-		  {"string": "s", "replace":"\\sigma "},
-		  {"string": "t", "replace":"\\theta "},
-	  ]
-  },
-  {
-	  "name": "LaTeX.env.control",
-	  "strings": [
-		  {"string": "exo", "replace":"\\begin{exercice}\n\t$0\n\\end{exercice}"},
-		  {"string": "ex", "replace":"\\begin{exercice}\n\t$0\n\\end{exercice}"},
-		  {"string": "exe", "replace":"\\begin{exemple}\n\t$0\n\\end{exemple}"},
-		  {"string": "thm", "replace":"\\begin{theoreme}\n\t$0\n\\end{theoreme}"},
-		  {"string": "def", "replace":"\\begin{definition}\n\t$0\n\\end{definition}"},
-		  {"string": "prop", "replace":"\\begin{propriete}\n\t$0\n\\end{propriete}"},
-		  {"string": "rem", "replace":"\\begin{remarque}\n\t$0\n\\end{remarque}"},
-		  {"string": "enum", "replace":"\\begin{enumerate}[${1:1.}]\n\t\\item $0\n\\end{enumerate}"},
-		  {"string": "env", "replace":"\\begin{${1:env}}\n\t$0\n\\end{${1:env}}"},
-		  {"string": "item", "replace":"\\begin{itemize}\n\t\\item $0\n\\end{itemize}"},
-		  {"string": "tikz", "replace":"\\begin{tikzpicture}\n\t$0\n\\end{tikzpicture}"},
-		  {"string": "cen", "replace":"\\begin{center}\n\t$0\n\\end{center}"},
-		  ]
-  },
-  {
-	  "name": "tikz.env.control",
-	  "strings": [
-		  {"string": "pdef", "replace":"\\tkzDefPoint($1){$2}\n$0"},
-		  ]
-		  
-  },
-  {
-	  "name": "pkg.env.control",
-	  "strings": [
-		  {"string": "npkg", "replace":"\\usepackage${1:[option]}{$2}\n$0"},
-		  {"string": "nthm", "replace":"\\newtheorem{$1}{$2}\n$0"},
-		  {"string": "hhdr", "replace":"\\fancyhead[$1]{$2}\n$0"},
-		  {"string": "fhdr", "replace":"\\fancyfoot[$1]{$2}\n$0"},
-		  ]
-		  
-		  }, 
-],
+    {
+      "name": "LaTeX.keywords.control",
+      "strings": [
+        {"string": "d", "replace": "\\$${1:content}\\$ $0"},
+        {"string": "c", "replace": "\\[${1:content}\\]$0"},
+        {"string": "mm", "replace": "\\mult $0"},
+        {"string": "dd", "replace": "\\div $0"},
+        {"string": "ii", "replace": "\n\\item $0"},
+        {"string": "nl", "replace": "\n\\\\ $0"},
+        {"string": "fr", "replace": "\\dfrac{${1:num}}{${2:denom}} $0"},
+        {"string": "mm", "replace": "\\mult $0"},
+        {"string": "leq", "replace": "\\leqsant $0"},
+        {"string": "geq", "replace": "\\geqsant $0"},
+        {"string": "mapsto", "replace": "\\longmapsto $0"},
+        {"string": "deg", "replace": "\\degres $0"},
+        {"string": "w", "replace": "\\widehat{$1} $0"},
+        {"string": "v", "replace": "\\overrightarrow{$1} $0"},
+        {"string": "brace", "replace": "\\underset{${1:below}}{\\underbrace{$0}}"
+        }
+      ]
+    },
+    {
+      "name": "greek.keywords.control",
+      "strings": [
+        {"string": "a", "replace": "\\alpha "},
+        {"string": "b", "replace": "\beta "},
+        {"string": "p", "replace": "\\pi "},
+        {"string": "g", "replace": "\\gamma "},
+        {"string": "e", "replace": "\u000barepsilon "},
+        {"string": "z", "replace": "\\zeta "},
+        {"string": "n", "replace": "\\eta "},
+        {"string": "o", "replace": "\\omaga "},
+        {"string": "f", "replace": "\u000barphi "},
+        {"string": "s", "replace": "\\sigma "},
+        {"string": "t", "replace": "\theta "
+        }
+      ]
+    },
+    {
+      "name": "LaTeX.env.control",
+      "strings": [
+        {"string": "exo", "replace": "\begin{exercice}\n\t$0\n\\end{exercice}"},
+        {"string": "ex", "replace": "\begin{exercice}\n\t$0\n\\end{exercice}"},
+        {"string": "exe", "replace": "\begin{exemple}\n\t$0\n\\end{exemple}"},
+        {"string": "thm", "replace": "\begin{theoreme}\n\t$0\n\\end{theoreme}"},
+        {"string": "def", "replace": "\begin{definition}\n\t$0\n\\end{definition}"},
+        {"string": "prop", "replace": "\begin{propriete}\n\t$0\n\\end{propriete}"},
+        {"string": "rem", "replace": "\begin{remarque}\n\t$0\n\\end{remarque}"},
+        {"string": "enum", "replace": "\begin{enumerate}[${1:1.}]\n\t\\item $0\n\\end{enumerate}"},
+        {"string": "env", "replace": "\begin{${1:env}}\n\t$0\n\\end{${1:env}}"},
+        {"string": "item", "replace": "\begin{itemize}\n\t\\item $0\n\\end{itemize}"},
+        {"string": "tikz", "replace": "\begin{tikzpicture}\n\t$0\n\\end{tikzpicture}"},
+        {"string": "cen", "replace": "\begin{center}\n\t$0\n\\end{center}"
+        }
+      ]
+    },
+    {
+      "name": "tikz.env.control",
+      "strings": [
+        {"string": "pdef", "replace": "\tkzDefPoint($1){$2}\n$0"
+        }
+      ]
+    },
+    {
+      "name": "pkg.env.control",
+      "strings": [
+        {"string": "npkg", "replace": "\\usepackage${1:[option]}{$2}\n$0"},
+        {"string": "nthm", "replace": "\newtheorem{$1}{$2}\n$0"},
+        {"string": "hhdr", "replace": "\fancyhead[$1]{$2}\n$0"},
+        {"string": "fhdr", "replace": "\fancyfoot[$1]{$2}\n$0"
+        }
+      ]
+    }
+  ],
   "contexts": [
-	  {
-	  "description": "Control keywords",
-	  "scope": "text.tex.latex - comment - string",
-	  "pattern": "(?<!\\.|\\[|\\(|,)\\b([a-zA-Z]*)",
-	  "completionCaptureIndex": 1,
-	  "completionSetNames": [
-		  "LaTeX.keywords.control",
-		  "LaTeX.env.control",
-		  "tikz.env.control",
-		  "pkg.env.control",
-		  "greek.keywords.control",
-	  ]
-	  }
-]
+    {
+      "description": "Control keywords",
+      "scope": "text.tex.latex - comment - string",
+      "pattern": "(?<!\\.|\\[|\\(|,)\b([a-zA-Z]*)",
+      "completionCaptureIndex": 1,
+      "completionSetNames": [
+        "LaTeX.keywords.control",
+        "LaTeX.env.control",
+        "tikz.env.control",
+        "pkg.env.control",
+        "greek.keywords.control"
+      ]
+    }
+  ]
 }

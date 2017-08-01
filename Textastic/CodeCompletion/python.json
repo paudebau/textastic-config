@@ -1,27 +1,25 @@
 {
-"description": "Textastic Code Completion for pml simples",
-"uuid": "2F13083A-0CA1-4211-A392-EBCD4AF5FAF8",
-
-"completionSets": [
-{
-	"name": "python.structure",
-	"defaultAppend": "XX",
-	"strings": [
-		{"string": "for", "append":" \\1 in \\2\n\t$0"},
-		{"string": "forrange", "replace":"for ${1:var} in range(${2:value}):\n\t$0"}
-	]
-}
-],
-
-"contexts": [
-	{
-	"description": "python",
-	"scope": "source.python - comment - string",
-	"pattern": "\\b([a-z]+) ([a-z]) ([0-9]+)",
-	"completionCaptureIndex": 1,
-	"completionSetNames": [
-		"python.structure"
-	]
-	}
-]
+  "description": "Textastic Code Completion for pml simples",
+  "uuid": "",
+  "completionSets": [
+    {
+      "name": "python.structure",
+      "defaultAppend": "XX",
+      "strings": [
+        {"string": "for", "append": " \\1 in \\2\n\t$0"},
+        {"string": "forrange", "replace": "for ${1:var} in range(${2:value}):\n\t$0"}
+      ]
+    }
+  ],
+  "contexts": [
+    {
+      "description": "python",
+      "scope": "source.python - comment - string",
+      "pattern": "\b([a-z]+) ([a-z]) ([0-9]+)",
+      "completionCaptureIndex": 1,
+      "completionSetNames": [
+        "python.structure"
+      ]
+    }
+  ]
 }
