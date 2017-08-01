@@ -1,0 +1,125 @@
+category: LaTeX
+completionSets:
+- name: LaTeX.keywords.control
+  strings:
+  - replace: \$${1:content}\$ $0
+    string: d
+  - replace: \[${1:content}\]$0
+    string: c
+  - replace: \mult $0
+    string: mm
+  - replace: \div $0
+    string: dd
+  - replace: '
+
+      \item $0'
+    string: ii
+  - replace: '
+
+      \\ $0'
+    string: nl
+  - replace: \dfrac{${1:num}}{${2:denom}} $0
+    string: fr
+  - replace: \mult $0
+    string: mm
+  - replace: \leqsant $0
+    string: leq
+  - replace: \geqsant $0
+    string: geq
+  - replace: \longmapsto $0
+    string: mapsto
+  - replace: \degres $0
+    string: deg
+  - replace: \widehat{$1} $0
+    string: w
+  - replace: \overrightarrow{$1} $0
+    string: v
+  - replace: \underset{${1:below}}{\underbrace{$0}}
+    string: brace
+- name: greek.keywords.control
+  strings:
+  - replace: '\alpha '
+    string: a
+  - replace: '\beta '
+    string: b
+  - replace: '\pi '
+    string: p
+  - replace: '\gamma '
+    string: g
+  - replace: '\varepsilon '
+    string: e
+  - replace: '\zeta '
+    string: z
+  - replace: '\eta '
+    string: n
+  - replace: '\omaga '
+    string: o
+  - replace: '\varphi '
+    string: f
+  - replace: '\sigma '
+    string: s
+  - replace: '\theta '
+    string: t
+- name: LaTeX.env.control
+  strings:
+  - replace: "\\begin{exercice}\n\t$0\n\\end{exercice}"
+    string: exo
+  - replace: "\\begin{exercice}\n\t$0\n\\end{exercice}"
+    string: ex
+  - replace: "\\begin{exemple}\n\t$0\n\\end{exemple}"
+    string: exe
+  - replace: "\\begin{theoreme}\n\t$0\n\\end{theoreme}"
+    string: thm
+  - replace: "\\begin{definition}\n\t$0\n\\end{definition}"
+    string: def
+  - replace: "\\begin{propriete}\n\t$0\n\\end{propriete}"
+    string: prop
+  - replace: "\\begin{remarque}\n\t$0\n\\end{remarque}"
+    string: rem
+  - replace: "\\begin{enumerate}[${1:1.}]\n\t\\item $0\n\\end{enumerate}"
+    string: enum
+  - replace: "\\begin{${1:env}}\n\t$0\n\\end{${1:env}}"
+    string: env
+  - replace: "\\begin{itemize}\n\t\\item $0\n\\end{itemize}"
+    string: item
+  - replace: "\\begin{tikzpicture}\n\t$0\n\\end{tikzpicture}"
+    string: tikz
+  - replace: "\\begin{center}\n\t$0\n\\end{center}"
+    string: cen
+- name: tikz.env.control
+  strings:
+  - replace: '\tkzDefPoint($1){$2}
+
+      $0'
+    string: pdef
+- name: pkg.env.control
+  strings:
+  - replace: '\usepackage${1:[option]}{$2}
+
+      $0'
+    string: npkg
+  - replace: '\newtheorem{$1}{$2}
+
+      $0'
+    string: nthm
+  - replace: '\fancyhead[$1]{$2}
+
+      $0'
+    string: hhdr
+  - replace: '\fancyfoot[$1]{$2}
+
+      $0'
+    string: fhdr
+contexts:
+- completionCaptureIndex: 1
+  completionSetNames:
+  - LaTeX.keywords.control
+  - LaTeX.env.control
+  - tikz.env.control
+  - pkg.env.control
+  - greek.keywords.control
+  description: Control keywords
+  pattern: (?<!\.|\[|\(|,)\b([a-zA-Z]*)
+  scope: text.tex.latex - comment - string
+description: Textastic Code Completion for LaTeX
+uuid: ''

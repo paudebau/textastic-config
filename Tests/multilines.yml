@@ -1,0 +1,38 @@
+- >
+  1 very "long"
+  'string' with
+
+  paragraph gap, \n and        
+  spaces.
+- | 
+  2 very "long"
+  'string' with
+
+  paragraph gap, \n and        
+  spaces.
+- 3 very "long"
+  'string' with
+
+  paragraph gap, \n and        
+  spaces.
+- "4 very \"long\"
+  'string' with
+
+  paragraph gap, \n and        
+  s\
+  p\
+  a\
+  c\
+  e\
+  s."
+- '5 very "long"
+  ''string'' with
+
+  paragraph gap, \n and        
+  spaces.'
+- >- 
+  6 very "long"
+  'string' with
+
+  paragraph gap, \n and        
+  spaces.
